@@ -3,9 +3,9 @@ import Link from 'next/link';
 
 import Layout from '../components/layout';
 
-const PostLink = ({ title}) => (
+const PostLink = ({ title, id }) => (
     <li>
-        <Link href={`/post?title=${title}`}>
+        <Link as={`/p?id=${id}`} href={`/post?title=${title}`}>
             <a>{title}</a>
         </Link>
     </li>
@@ -15,9 +15,9 @@ export default () => (
     <Layout>
         <h1>My Blog</h1>
         <ul>
-            <PostLink title="Hello Next.js" />
-            <PostLink title="Learn Next.js is awesome" />
-            <PostLink title="Deploy apps with Zeit" />
+            <PostLink id='hello-next' title="Hello Next.js" />
+            <PostLink id='learn-next' title="Learn Next.js is awesome" />
+            <PostLink id='deploy-app' title="Deploy apps with Zeit" />
         </ul>
     </Layout>
 );
