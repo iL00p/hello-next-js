@@ -7,7 +7,7 @@ import { TV_API_URL } from '../constants/config';
 
 const PostLink = ({ title, id }) => (
     <li>
-        <Link as={`/p/${id}`} href={`/post?title=${title}`}>
+        <Link as={`/p/${id}`} href={`/post?id=${id}`}>
             <a>{title}</a>
         </Link>
     </li>
@@ -28,7 +28,7 @@ const Index = ({ shows }) => (
 
 Index.getInitialProps = async function () {
 
-    const res = await fetch(`${TV_API_URL}?q=batman`);
+    const res = await fetch(`${TV_API_URL}search/shows?q=batman`);
     const data = await res.json();
 
     return {

@@ -4,4 +4,4 @@ export const HEADER_PATHS = [
 ];
 
 
-export const TV_API_URL = 'https://api.tvmaze.com/search/shows';
+export const TV_API_URL = 'https://api.tvmaze.com/';
