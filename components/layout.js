@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './header';
+import Style from '../styles';
 
 const layoutStyle = {
     margin: 20,
@@ -11,5 +12,6 @@ export default ({ children }) => (
     <div style={layoutStyle}>
         <Header />
         {children}
+        <Style/>
     </div>
 );
