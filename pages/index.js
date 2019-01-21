@@ -5,7 +5,7 @@ import Layout from '../components/layout';
 
 const PostLink = ({ title, id }) => (
     <li>
-        <Link as={`/p?id=${id}`} href={`/post?title=${title}`}>
+        <Link as={`/p/${id}`} href={`/post?title=${title}`}>
             <a>{title}</a>
         </Link>
     </li>
