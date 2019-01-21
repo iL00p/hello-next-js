@@ -2,10 +2,7 @@ import React from 'react';
 import { withRouter } from 'next/router';
 import Link from 'next/link';
 
-const HEADER_PATHS = [
-    { link: '/', name: 'Home' },
-    { link: '/about', name: 'About' },
-]
+import { HEADER_PATHS } from '../constants/config';
 
 const linkStyle = {
     marginRight: 15

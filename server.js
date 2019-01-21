@@ -10,7 +10,6 @@ app.prepare()
         const server = express()
 
         server.get('/p/:id', (req, res) => {
-            console.log('HERE!!!')
             const actualPage = '/post'
             const queryParams = { title: req.params.id }
             app.render(req, res, actualPage, queryParams)

@@ -1,7 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
+import fetch from 'isomorphic-unfetch';
 
 import Layout from '../components/layout';
+import { TV_API_URL } from '../constants/config';
 
 const PostLink = ({ title, id }) => (
     <li>
@@ -11,13 +13,27 @@ const PostLink = ({ title, id }) => (
     </li>
 )
 
-export default () => (
+const Index = ({ shows }) => (
     <Layout>
-        <h1>My Blog</h1>
+        <h1>Batman Shows</h1>
         <ul>
-            <PostLink id='hello-next' title="Hello Next.js" />
-            <PostLink id='learn-next' title="Learn Next.js is awesome" />
-            <PostLink id='deploy-app' title="Deploy apps with Zeit" />
+            {
+                shows.map(({ show }) => (
+                    <PostLink id={show.id} title={show.name} key={show.id} />
+                ))
+            }
         </ul>
     </Layout>
 );
+
+Index.getInitialProps = async function () {
+
+    const res = await fetch(`${TV_API_URL}?q=batman`);
+    const data = await res.json();
+
+    return {
+        shows: data,
+    }
+}
+
+export default Index;
