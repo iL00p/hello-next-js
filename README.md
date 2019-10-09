@@ -12,3 +12,5 @@ You can find the demo at this link : https://next-js-7jrkjg8n7.now.sh
 npm install
 npm run dev
 ```
+
+For Hacktoberfest 2019
